@@ -1,5 +1,10 @@
 #ifndef DOG_H
 #define DOG_H
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
 /**
  * struct dog - Dog attributes
  * @name: The name of the dog
@@ -9,12 +14,12 @@
  * Description: The attributes of a dog
  */
 
-typedef struct dog
+struct dog
 {
     char *name;
     float age;
     char *owner;
-} dog;
+};
 /**
  * dog_t - Typedef for dog structure
  */
