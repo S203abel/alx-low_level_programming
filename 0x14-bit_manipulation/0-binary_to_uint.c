@@ -16,7 +16,7 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	if (*b != '1' && *b != '0')
+	if (b != '1' && b != '0')
 		return (0);
 
 	while (b[strl] != '\0')
@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 
 	while (strl)
 	{
-		dec += ((*b[strl - 1] - '0') * power);
+		dec += ((b[strl - 1] - '0') * power);
 		power *= 2;
 		strl--;
 	}
