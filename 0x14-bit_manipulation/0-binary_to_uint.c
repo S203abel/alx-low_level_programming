@@ -13,19 +13,20 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int dec = 0;
 	int strl = 0, power = 1;
 
-	if (*b != '1' && *b != '0')
+	if (b == NULL)
 		return (0);
 
-	if (b == NULL)
+	if (*b != '1' && *b != '0')
 		return (0);
 
 	while (b[strl] != '\0')
 		strl++;
 
-	for (; strl > 0; strl--)
+	while (strl)
 	{
 		dec = dec + ((b[strl - 1] - '0') * power);
 		power = power * 2;
+		strl--;
 	}
 	return (dec);
 }
